@@ -40,7 +40,7 @@ Installation
 ************
 
 Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+of the CodeIgniter User Guide .
 
 *******
 License
@@ -67,4 +67,4 @@ Acknowledgement
 ***************
 
 The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+contributors to the CodeIgniter project and you, the CodeIgniter user .
