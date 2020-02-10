@@ -4,6 +4,6 @@
 			<label for="kode">Masukan kode ujian</label>
 			<input type="text" class="form-control" id="kode" name="kode">
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Masuk</button>
 	</form>
 </div>
