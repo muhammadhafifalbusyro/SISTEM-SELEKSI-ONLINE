@@ -2,8 +2,8 @@
 
 class Seleksi extends CI_Controller{
 	public function index()
-	{
-		$this->load->view("templates/header");
+	{	$data["page"] = "seleksi";
+		$this->load->view("templates/header",$data);
 		$this->load->view("beranda");
 		$this->load->view("templates/footer");
 	}

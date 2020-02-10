@@ -27,7 +27,7 @@
 							<a class="nav-link" href="<?php echo base_url() ?>ujian/login">Ujian</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Seleksi</a>
+							<a class="nav-link" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
 						</li>
 					</ul>
 				</div>
@@ -41,7 +41,21 @@
 							<a class="nav-link active" href="<?php echo base_url() ?>ujian/login">Ujian</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Seleksi</a>
+							<a class="nav-link" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
+						</li>
+					</ul>
+				</div>
+			<?php elseif($page == "seleksi"):?>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ">
+						<li class="nav-item">
+							<a class="nav-link" href="<?php echo base_url() ?>">Beranda <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="<?php echo base_url() ?>ujian/login">Ujian</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
 						</li>
 					</ul>
 				</div>
