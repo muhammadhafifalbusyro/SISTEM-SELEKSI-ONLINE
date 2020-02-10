@@ -7,21 +7,21 @@
   </div>
   <div style="display:flex;width: 100%;justify-content: space-between;padding: 50px 50px 50px 50px ">
     <div class="card" style="width: 18rem;">
-      <img src="<?php base_url(); ?>assets/image/frontend.png"class="card-img-top" alt="...">
+      <img src="<?php echo base_url(); ?>assets/image/frontend.png"class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text" style="font-weight: bold;">Front End Division</p>
         <p class="card-text">Belajar membangun tampilan website dari dasar hingga mahir dengan di bimbing oleh mentor yang telah perpengalaman</p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="<?php base_url(); ?>assets/image/backend.png"class="card-img-top" alt="...">
+      <img src="<?php echo base_url(); ?>assets/image/backend.png"class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text" style="font-weight: bold;">Back End Division</p>
         <p>Belajar membangun sistem yang berjalan dibalik sebuah website dari dasar hingga mahir dengan dibimbing oleh mentor yang telah berpengalaman</p>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="<?php base_url(); ?>assets/image/mobile.png"class="card-img-top" alt="...">
+      <img src="<?php echo base_url(); ?>assets/image/mobile.png"class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-text" style="font-weight: bold;">Mobile Division</p>
         <p>Belajar membangun aplikasi android atau los dari dasar hingga mahir dengan dibimbing oleh mentor yang telah berpengalaman</p>
