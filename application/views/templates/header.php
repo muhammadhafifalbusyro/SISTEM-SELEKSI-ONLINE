@@ -27,7 +27,7 @@
 							<a class="nav-link" href="<?php echo base_url() ?>ujian/login">Ujian</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
+							<a class="nav-link" href="<?php echo base_url() ?>seleksi">Seleksi</a>
 						</li>
 					</ul>
 				</div>
@@ -41,7 +41,7 @@
 							<a class="nav-link active" href="<?php echo base_url() ?>ujian/login">Ujian</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
+							<a class="nav-link" href="<?php echo base_url() ?>seleksi">Seleksi</a>
 						</li>
 					</ul>
 				</div>
@@ -55,7 +55,7 @@
 							<a class="nav-link " href="<?php echo base_url() ?>ujian/login">Ujian</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="<?php echo base_url() ?>seleksi/index">Seleksi</a>
+							<a class="nav-link active" href="<?php echo base_url() ?>seleksi">Seleksi</a>
 						</li>
 					</ul>
 				</div>
