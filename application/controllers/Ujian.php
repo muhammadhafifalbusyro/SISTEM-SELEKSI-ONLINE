@@ -17,6 +17,10 @@ class Ujian extends CI_Controller{
 
 	public function soalujian()
 	{
+		$data["all"]=[];
+		if (isset($_POST["add"])){
+			$data["all"]= $_POST;
+		}
 		$data["page"] = "ujian";
 		$this->load->view("templates/header",$data);
 		$this->load->view("soalujian");

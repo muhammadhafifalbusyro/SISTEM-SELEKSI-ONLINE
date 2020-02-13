@@ -1,4 +1,5 @@
-<div style="display: flex;height: 95vh;width: 100%;justify-content: flex-start ;align-items: center">
+
+<div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
 	<form method="post" action="">
 		<div class="form-group ml-5" >
 			<label for="namalengkap">Nama Lengkap</label>
@@ -19,9 +20,118 @@
 			<label for="backdev">Back End Division</label>
 		</div>
 		<div class="form-group ml-5" >
-			<label for="kode">Pilihan Jurusan 2</label>
-			<input type="text" class="form-control" id="kode" name="kode">
+			<label >Pilihan Jurusan 2</label>
+			<br>
+			<input type="radio" id="mobdev" name="jurusan2" value="Mobile Division">
+			<label for="mobdev">Mobile Division</label>
+			<input type="radio" id="frontdev" name="jurusan2" value="Front End Division">
+			<label for="frontdev">Front End Division</label>
+			<input type="radio" id="backdev" name="jurusan2" value="Back End Division">
+			<label for="backdev">Back End Division</label>
 		</div>
-		<button type="submit" class="btn btn-primary ml-5" name="masuk">Masuk</button>
+		<br>
+		<h1 class="ml-5">SOAL UJIAN</h1>
+		<br>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal1" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal1" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal1" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal2" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal2" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal2" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal3" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal3" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal3" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal4" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal4" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal4" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal5" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal5" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal5" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal6" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal6" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal6" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal7" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal7" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal7" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal8" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal8" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal8" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal9" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal9" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal9" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<div class="form-group ml-5" >
+			<label style="font-weight: bold;">1) Siapa nama hokage pertama</label>
+			<br>
+			<input type="radio" id="a" name="soal10" value=1>
+			<label for="a">A) Hasirama senju</label><br>
+			<input type="radio" id="b" name="soal10" value=0>
+			<label for="b">B) Uzumaki naruto</label><br>
+			<input type="radio" id="c" name="soal10" value=0>
+			<label for="c">C) Uchiha sasuke</label><br>
+		</div>
+		<button type="submit" class="btn btn-primary ml-5" name="add">Masuk</button>
 	</form>
 </div>
