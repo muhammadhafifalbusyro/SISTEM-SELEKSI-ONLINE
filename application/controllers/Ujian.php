@@ -6,12 +6,20 @@ class Ujian extends CI_Controller{
 		$data["kodedefault"]= "seleksijurusan";
 		if (isset($_POST["masuk"])){
 			if($data["kodedefault"] == $_POST["kode"]){
-				$data["kodedefault"] ="asdfnkasdfksdafkasdfjkas";
+				redirect(base_url()."/ujian/soalujian");
 			}
 		}
 		$data["page"] = "ujian";
 		$this->load->view("templates/header",$data);
 		$this->load->view("ujian");
+		$this->load->view("templates/footer");
+	}
+
+	public function soalujian()
+	{
+		$data["page"] = "ujian";
+		$this->load->view("templates/header",$data);
+		$this->load->view("soalujian");
 		$this->load->view("templates/footer");
 	}
 }
