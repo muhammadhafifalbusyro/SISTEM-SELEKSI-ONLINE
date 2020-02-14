@@ -33,7 +33,7 @@ class Ujian extends CI_Controller{
 		if (isset($_POST["add"])){
 			$data["nama_lengkap"] = $_POST["namalengkap"];
 			$data["jurusan1"] = $_POST["jurusan1"];
-			$data["jurusan1"] = $_POST["jurusan2"];
+			$data["jurusan2"] = $_POST["jurusan2"];
 			$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
 			$data["hasil"]= $hasil_ujian*10;
 
