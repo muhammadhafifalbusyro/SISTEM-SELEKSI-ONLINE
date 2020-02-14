@@ -132,6 +132,13 @@
 			<input type="radio" id="c" name="soal10" value=0>
 			<label for="c">C) Uchiha sasuke</label><br>
 		</div>
-		<button type="submit" class="btn btn-primary ml-5" name="add">Masuk</button>
+		<button type="submit" class="btn btn-primary ml-5" name="add" id="add" >Selesai</button>
+		<h1><?php var_dump($all) ?></h1>
+		<script type="text/javascript">
+			window.setTimeout(function() {
+				document.getElementById("add").click();
+				window.location.replace("http://www.w3schools.com");
+			}, 5000)
+		</script>
 	</form>
 </div>
