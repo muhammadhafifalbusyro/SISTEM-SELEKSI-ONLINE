@@ -17,11 +17,6 @@ class Ujian extends CI_Controller{
 
 	public function soalujian()
 	{
-		$data["all"]=[];
-		if (isset($_POST["add"])){
-			$data["all"]= $_POST;
-			redirect(base_url()."ujian/result");
-		}
 		$data["page"] = "ujian";
 		$this->load->view("templates/header",$data);
 		$this->load->view("soalujian");
@@ -30,6 +25,10 @@ class Ujian extends CI_Controller{
 	public function result()
 	{
 		$data["page"] = "ujian";
+		$data["all"]=[];
+		if (isset($_POST["add"])){
+			$data["all"]= $_POST;
+		}
 		$this->load->view("templates/header",$data);
 		$this->load->view("result");
 		$this->load->view("templates/footer");

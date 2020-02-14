@@ -1,6 +1,6 @@
 
 <div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
-	<form method="post" action="">
+	<form method="post" action="<?php echo base_url() ?>ujian/result">
 		<div class="form-group ml-5" >
 			<label for="namalengkap">Nama Lengkap</label>
 			<input type="text" class="form-control" id="namalengkap" name="namalengkap">
