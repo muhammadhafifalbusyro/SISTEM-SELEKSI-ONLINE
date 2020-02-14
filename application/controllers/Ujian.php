@@ -4,9 +4,14 @@ class Ujian extends CI_Controller{
 	public function login()
 	{
 		$data["kodedefault"]= "seleksijurusan";
+		$data["alert"] = "";
 		if (isset($_POST["masuk"])){
 			if($data["kodedefault"] == $_POST["kode"]){
+				$data["alert"] = "";
 				redirect(base_url()."/ujian/soalujian");
+			}
+			else{
+				$data["alert"] = "Kode yang anda masukan salah";
 			}
 		}
 		$data["page"] = "ujian";
