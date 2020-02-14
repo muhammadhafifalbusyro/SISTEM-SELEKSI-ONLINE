@@ -2,7 +2,7 @@
 	<form method="post" action="">
 		<div class="form-group">
 			<label for="kode">Masukan kode ujian</label>
-			<input type="text" class="form-control" id="kode" name="kode">
+			<input type="password" class="form-control" id="kode" name="kode">
 		</div>
 		<button type="submit" class="btn btn-primary" name="masuk">Masuk</button>
 	</form>
