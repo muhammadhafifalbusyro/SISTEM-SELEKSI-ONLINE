@@ -77,6 +77,6 @@ class Ujian extends CI_Controller{
 		$this->load->view("templates/header",$data);
 		$this->load->view("result");
 		$this->load->view("templates/footer");
-		..
+		...
 	}
 }
