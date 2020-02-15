@@ -1,4 +1,5 @@
-<div style="display: flex;height: 95vh;width: 100%;justify-content: center;align-items: center">
+<div style="display: flex;height: 95vh;width: 100%;justify-content: center;align-items: center;flex-direction: column;">
+	<h1>Data Berhasil Terkirim !</h1><br>
 	<div class="container">
 		<form method="post" action="">
 			<table class="table ">
@@ -19,7 +20,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" class="btn btn-primary ml-5" name="kirim" id="kirim" > Kirim Data</button>
+			<button type="submit" class="btn btn-primary ml-5" name="kembali" id="kembali" >Home</button>
 		</form>
 	</div>
 </div>
