@@ -1,6 +1,11 @@
 <?php 
 
 class Ujian extends CI_Controller{
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model("model_peserta");
+	}
 	public function login()
 	{
 		$data["kodedefault"]= "seleksijurusan";
@@ -42,12 +47,12 @@ class Ujian extends CI_Controller{
 			$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
 			$data["hasil"]= $hasil_ujian*10;
 
-
-			$this->load->model("model_peserta");
 			$this->model_peserta->tambah_data($id, $data);
 
 		}
-		
+		elseif (isset($_POST["kembali"])) {
+			redirect(base_url()."beranda");
+		}
 		$this->load->view("templates/header",$data);
 		$this->load->view("result");
 		$this->load->view("templates/footer");

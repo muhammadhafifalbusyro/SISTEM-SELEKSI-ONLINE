@@ -8,22 +8,22 @@
 		<div class="form-group ml-5" >
 			<label style="font-weight: bold;">Pilihan Jurusan 1</label>
 			<br>
-			<input type="radio" id="mobdev" name="jurusan1" value="Mobile Division"required>
-			<label for="mobdev">Mobile Division</label>
-			<input type="radio" id="frontdev" name="jurusan1" value="Front End Division">
-			<label for="frontdev">Front End Division</label>
-			<input type="radio" id="backdev" name="jurusan1" value="Back End Division">
-			<label for="backdev">Back End Division</label>
+			<input type="radio" id="mobdev1" name="jurusan1" value="Mobile Division"required>
+			<label for="mobdev1">Mobile Division</label>
+			<input type="radio" id="frontdev1" name="jurusan1" value="Front End Division">
+			<label for="frontdev1">Front End Division</label>
+			<input type="radio" id="backdev1" name="jurusan1" value="Back End Division">
+			<label for="backdev1">Back End Division</label>
 		</div>
 		<div class="form-group ml-5" >
 			<label style="font-weight: bold;">Pilihan Jurusan 2</label>
 			<br>
-			<input type="radio" id="mobdev" name="jurusan2" value="Mobile Division"required>
-			<label for="mobdev">Mobile Division</label>
-			<input type="radio" id="frontdev" name="jurusan2" value="Front End Division">
-			<label for="frontdev">Front End Division</label>
-			<input type="radio" id="backdev" name="jurusan2" value="Back End Division">
-			<label for="backdev">Back End Division</label>
+			<input type="radio" id="mobdev2" name="jurusan2" value="Mobile Division"required>
+			<label for="mobdev2">Mobile Division</label>
+			<input type="radio" id="frontdev2" name="jurusan2" value="Front End Division">
+			<label for="frontdev2">Front End Division</label>
+			<input type="radio" id="backdev2" name="jurusan2" value="Back End Division">
+			<label for="backdev2">Back End Division</label>
 		</div>
 		<br>
 		<h1 class="ml-5">SOAL UJIAN</h1>
@@ -128,7 +128,7 @@
 			<input type="radio" id="c" name="soal10" value=0>
 			<label for="c">C) -5x<sup>2</sup> - 2xy - 3y<sup>2</sup></label><br>
 		</div>
-		<button type="submit" class="btn btn-primary ml-5" name="add" id="add" >Selesai</button>
+		<button type="submit" class="btn btn-primary ml-5" name="add" id="add" onClick="return confirm('Apakah anda yakin sudah selesai ?')">Selesai</button>
 		<!-- <script type="text/javascript">
 			window.setTimeout(function() {
 				document.getElementById("add").click();
