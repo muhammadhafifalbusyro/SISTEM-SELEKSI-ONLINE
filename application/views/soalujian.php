@@ -2,11 +2,11 @@
 <div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
 	<form method="post" action="<?php echo base_url() ?>ujian/result">
 		<div class="form-group ml-5" >
-			<label for="namalengkap">Nama Lengkap</label>
+			<label for="namalengkap" style="font-weight: bold;">Nama Lengkap</label>
 			<input type="text" class="form-control" id="namalengkap" name="namalengkap" required autocomplete="off">
 		</div>
 		<div class="form-group ml-5" >
-			<label >Pilihan Jurusan 1</label>
+			<label style="font-weight: bold;">Pilihan Jurusan 1</label>
 			<br>
 			<input type="radio" id="mobdev" name="jurusan1" value="Mobile Division"required>
 			<label for="mobdev">Mobile Division</label>
@@ -16,7 +16,7 @@
 			<label for="backdev">Back End Division</label>
 		</div>
 		<div class="form-group ml-5" >
-			<label >Pilihan Jurusan 2</label>
+			<label style="font-weight: bold;">Pilihan Jurusan 2</label>
 			<br>
 			<input type="radio" id="mobdev" name="jurusan2" value="Mobile Division"required>
 			<label for="mobdev">Mobile Division</label>

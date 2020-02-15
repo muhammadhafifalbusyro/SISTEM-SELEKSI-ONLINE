@@ -7,7 +7,6 @@ class Ujian extends CI_Controller{
 		$data["alert"] = "";
 		if (isset($_POST["masuk"])){
 			if($data["kodedefault"] == $_POST["kode"]){
-				$data["alert"] = "";
 				redirect(base_url()."/ujian/soalujian");
 			}
 			else{
@@ -43,6 +42,14 @@ class Ujian extends CI_Controller{
 			$data["hasil"]= $hasil_ujian*10;
 
 		}
+
+		if (isset($_POST["kirim"])){
+				$this->load->model("model_peserta");
+				$this->model_peserta->tambah_data();
+			}
+
+
+
 		$this->load->view("templates/header",$data);
 		$this->load->view("result");
 		$this->load->view("templates/footer");
