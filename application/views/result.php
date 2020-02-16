@@ -21,7 +21,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" class="btn btn-primary ml-5" name="kembali" id="kembali" >Home</button>
+			<button type="submit" class="btn btn-primary mt-5" name="kembali" id="kembali" >Home</button>
 		</form>
 	</div>
 	<?php elseif (!isset($_POST["add"])):?>
@@ -45,7 +45,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" class="btn btn-primary ml-5" name="kembali" id="kembali" >Home</button>
+			<button type="submit" class="btn btn-primary mt-5" name="kembali" id="kembali" >Home</button>
 		</form>
 	</div>
 	<?php endif; ?>
