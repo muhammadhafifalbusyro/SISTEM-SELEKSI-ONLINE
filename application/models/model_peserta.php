@@ -12,6 +12,7 @@ class Model_peserta extends CI_Model{
 		);
 
 		$this->db->insert("peserta", $data); 
+		return $this->db->affected_rows();
 	}
 }
 

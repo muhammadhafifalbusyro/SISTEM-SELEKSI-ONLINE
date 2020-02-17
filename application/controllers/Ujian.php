@@ -42,9 +42,7 @@ class Ujian extends CI_Controller{
 			$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
 			$data["hasil"]= $hasil_ujian*10;
 
-			$this->model_peserta->tambah_data($id, $data);
-			$data["value"] = $this->db->affected_rows();
-
+			$this->model_peserta->tambah_data($data);
 
 			$_SESSION["nama_lengkap"] = $_POST["namalengkap"];
 			$_SESSION["jurusan1"] = $_POST["jurusan1"];
