@@ -1,6 +1,6 @@
 
 <div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
-	<form method="post" action="<?php echo base_url() ?>ujian/result">
+	<form method="post" action="">
 		<div class="form-group ml-5" >
 			<label for="namalengkap" style="font-weight: bold;">Nama Lengkap </label>
 			<input type="text" class="form-control" id="namalengkap" name="namalengkap" required autocomplete="off">
@@ -149,11 +149,15 @@
 			<label for="10d">D) -5x<sup>2</sup> - 2xy + 3y<sup>2</sup></label><br>
 		</div>
 		<button type="submit" class="btn btn-primary ml-5" name="add" id="add" onClick="return confirm('Apakah anda yakin sudah selesai ?')">Selesai</button>
+	</form>
 		<!-- <script type="text/javascript">
 			window.setTimeout(function() {
 				document.getElementById("add").click();
 				window.location.replace("http://www.w3schools.com");
 			}, 5000)
 		</script>
- -->	</form>
+	-->	
+	<?php if(isset($value)): ?>
+		<h1><?php echo $value ?></h1>
+	<?php endif; ?>
 </div>
