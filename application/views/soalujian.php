@@ -157,7 +157,4 @@
 			}, 5000)
 		</script>
 	-->	
-	<?php if(isset($value)): ?>
-		<h1><?php echo $value ?></h1>
-	<?php endif; ?>
 </div>
