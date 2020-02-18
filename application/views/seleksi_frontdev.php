@@ -18,6 +18,7 @@
 				</tr>	
 			</tbody>
 		</table>
+		<?php var_dump($value[0]["id"]) ?>
 	</div>
 </div>
 
