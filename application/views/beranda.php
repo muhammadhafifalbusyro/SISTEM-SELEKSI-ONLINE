@@ -1,4 +1,4 @@
-  <div class="jumbotron">
+  <div class="jumbotron mt-5">
     <h1 class="display-4">Selamat datang di Pondok Programmer</h1>
     <p class="lead">Tahap awal sebelum calon santri belajar di Pondok Programmer, seluruh calon santri diwajibkan mengikuti ujian seleksi jurusan di Pondok Programmer</p>
   </div>
