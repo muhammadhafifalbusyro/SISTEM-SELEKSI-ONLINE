@@ -7,6 +7,9 @@ class Ujian extends CI_Controller{
 		$this->load->model("model_peserta");
 		$this->load->model("model_admin");
 		$this->limit = $this->model_admin->get_data_limit();
+		$this->frontend_limit = $this->limit["frontend"];
+		$this->backend_limit = $this->limit["backend"];
+		$this->mobile_limit = $this->limit["mobile"];
 		$this->load->library("session");
 	}
 	public function login()
@@ -26,8 +29,6 @@ class Ujian extends CI_Controller{
 			}
 		}
 		$data["page"] = "ujian";
-		$data["lim"] = $this->limit["frontend"];
-		var_dump($data["lim"]);
 		$this->load->view("templates/header",$data);
 		$this->load->view("ujian");
 		$this->load->view("templates/footer");
@@ -54,7 +55,7 @@ class Ujian extends CI_Controller{
 
 
 
-//meletakan data pada tabel jurusan1 yang ditentukan
+			//meletakan data pada tabel jurusan1 yang ditentukan
 
 			$data_peserta = $this->model_peserta->get_data_peserta();
 
@@ -108,8 +109,10 @@ class Ujian extends CI_Controller{
 
 			// seleksi data front end
 				$data_frontend = $this->model_peserta->get_data_frontend();
+				$frontend_limit = $this->frontend_limit-1;
+
 				foreach ($data_frontend as $key => $value) {
-					if ($key>1 && $value["role"]==1) {
+					if ($key>$frontend_limit && $value["role"]==1) {
 						if ($value["jurusan2"]=="Back End Division") {
 							$data_value_backend["id"] = $value["id"];
 							$data_value_backend["nama_lengkap"] =$value["nama_lengkap"];
@@ -133,15 +136,17 @@ class Ujian extends CI_Controller{
 							$this->model_peserta->delete_data_frontend($value["id"]);
 						}
 					}
-					elseif ($key>1 && $value["role"]==2) {
+					elseif ($key>$frontend_limit && $value["role"]==2) {
 						$this->model_peserta->delete_data_frontend($value["id"]);
 					}
 				}
 
 			//seleksi data backend
 				$data_backend = $this->model_peserta->get_data_backend();
+				$backend_limit = $this->backend_limit-1;
+
 				foreach ($data_backend as $key => $value) {
-					if ($key>1 && $value["role"]==1) {
+					if ($key>$backend_limit && $value["role"]==1) {
 						if ($value["jurusan2"]=="Front End Division") {
 							$data_value_frontend["id"] = $value["id"];
 							$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
@@ -165,15 +170,17 @@ class Ujian extends CI_Controller{
 							$this->model_peserta->delete_data_backend($value["id"]);
 						}
 					}
-					elseif ($key>1 && $value["role"]==2) {
+					elseif ($key>$backend_limit && $value["role"]==2) {
 						$this->model_peserta->delete_data_backend($value["id"]);
 					}
 				}
 
 			//seleksi data mobile
 				$data_mobile= $this->model_peserta->get_data_mobile();
+				$mobile_limit = $this->mobile_limit-1;
+
 				foreach ($data_mobile as $key => $value) {
-					if ($key>1 && $value["role"]==1) {
+					if ($key>$mobile_limit && $value["role"]==1) {
 						if ($value["jurusan2"]=="Front End Division") {
 							$data_value_frontend["id"] = $value["id"];
 							$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
@@ -197,7 +204,7 @@ class Ujian extends CI_Controller{
 							$this->model_peserta->delete_data_mobile($value["id"]);
 						}
 					}
-					elseif ($key>1 && $value["role"]==2) {
+					elseif ($key>$mobile_limit && $value["role"]==2) {
 						$this->model_peserta->delete_data_mobile($value["id"]);
 					}
 				}
@@ -213,22 +220,26 @@ class Ujian extends CI_Controller{
 
 		//hapus data ketika sudah melalui pemfilteran agar data data yang sudah melalui dua pemfilteran kemungkinan masih ada data yang belum terseleksi
 
+			$frontend_limit = $this->frontend_limit-1;
+			$backend_limit = $this->backend_limit-1;
+			$mobile_limit = $this->mobile_limit-1;
 
 			$del_data_frontend = $this->model_peserta->get_data_frontend();
+
 			foreach ($del_data_frontend as $key => $value) {
-				if ($key>1 && $value["role"]==2) {
+				if ($key>$frontend_limit && $value["role"]==2) {
 					$this->model_peserta->delete_data_frontend($value["id"]);
 				}
 			}
 			$del_data_backend = $this->model_peserta->get_data_backend();
 			foreach ($del_data_backend as $key => $value) {
-				if ($key>1 && $value["role"]==2) {
+				if ($key>$backend_limit && $value["role"]==2) {
 					$this->model_peserta->delete_data_backend($value["id"]);
 				}
 			}
 			$del_data_mobile = $this->model_peserta->get_data_mobile();
 			foreach ($del_data_frontend as $key => $value) {
-				if ($key>1 && $value["role"]==2) {
+				if ($key>$mobile_limit && $value["role"]==2) {
 					$this->model_peserta->delete_data_mobile($value["id"]);
 				}
 			}

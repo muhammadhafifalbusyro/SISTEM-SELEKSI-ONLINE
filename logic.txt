@@ -1,0 +1,7 @@
+data flow logic
+
+1)masukan kedalam table peserta
+2)masukan data seluruh peserta kedalam tabel jurusan masing-masing
+3)seleksi peserta berdasarkan nilai
+4)ulangi seleksi sebanyak pilihan jurusan karena pilihan jurusan hanya ada 2 yaitu jurusan 1 dan jurusan 2 , maka ulangi sebanyak dua kali
+5) finishing seleksi dengan menetapkan dengan limit
