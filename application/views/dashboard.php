@@ -1,5 +1,5 @@
-<div style="display: flex;height: 95vh;width: 100%;justify-content: center;align-items: center;" class="container">
-	
+<div style="display: flex;height: 95vh;width: 100%;justify-content: center;align-items: center;flex-direction: column;" class="container" >
+	<h1>Halaman Admin</h1><br>
 	<form method="post" action="">
 		<label for="nis">Batas santri divisi Front End </label>
 		<br>
