@@ -11,11 +11,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>wef</td>
-					<td>awef</td>
-					<td>6</td>
-				</tr>	
+				<?php $no_urut = 1 ?>
+				<?php foreach ($data_backend as $value):?>
+					<tr>
+						<td><?php echo $no_urut ?></td>
+						<td><?php echo $value["nama_lengkap"] ?></td>
+						<td><?php echo $value["nilai_ujian"] ?></td>
+					</tr>	
+					<?php $no_urut++ ?>
+				<?php endforeach ?>
 			</tbody>
 		</table>
 	</div>
