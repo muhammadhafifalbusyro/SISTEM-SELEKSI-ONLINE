@@ -31,119 +31,213 @@ class Ujian extends CI_Controller{
 
 	public function soalujian()
 	{
-		$data["data_peserta"]= [];
-		$data["data_frontend"]= [];
-
 		if(!isset($_SESSION["login"])){
 			redirect(base_url()."/ujian/login");
 		}
-		// elseif (isset($_POST["add"])&&isset($_SESSION["login"])){
-		// 	$data["nama_lengkap"] = $_POST["namalengkap"];
-		// 	$data["jurusan1"] = $_POST["jurusan1"];
-		// 	$data["jurusan2"] = $_POST["jurusan2"];
-		// 	$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
-		// 	$data["hasil"]= $hasil_ujian*10;
+		elseif (isset($_POST["add"])&&isset($_SESSION["login"])){
+			$data["nama_lengkap"] = $_POST["namalengkap"];
+			$data["jurusan1"] = $_POST["jurusan1"];
+			$data["jurusan2"] = $_POST["jurusan2"];
+			$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
+			$data["hasil"]= $hasil_ujian*10;
 
-		// 	$data["value"] = $this->model_peserta->tambah_data_peserta($data);
+			$data["value"] = $this->model_peserta->tambah_data_peserta($data);
 
-		// 	$_SESSION["nama_lengkap"] = $_POST["namalengkap"];
-		// 	$_SESSION["jurusan1"] = $_POST["jurusan1"];
-		// 	$_SESSION["jurusan2"] = $_POST["jurusan2"];
-		// 	$_SESSION["hasil"] = $data["hasil"];
-
-
-		// 	if ($data["value"]>0) {
-		// 		redirect(base_url()."ujian/result");
-		// 	}
-		// 	elseif($data["value"]<=0){
-		// 		echo "alert('Pengiriman data gagal')";
-		// 	}
-
-		// }
+			$_SESSION["nama_lengkap"] = $_POST["namalengkap"];
+			$_SESSION["jurusan1"] = $_POST["jurusan1"];
+			$_SESSION["jurusan2"] = $_POST["jurusan2"];
+			$_SESSION["hasil"] = $data["hasil"];
 
 
 
+//meletakan data pada tabel jurusan1 yang ditentukan
+
+			$data_peserta = $this->model_peserta->get_data_peserta();
+
+			foreach ($data_peserta as $value) {
+				if ($value["jurusan1"]=== "Front End Division") {
+
+					$data_value["id"] = $value["id"];
+					$data_value["nama_lengkap"] =$value["nama_lengkap"];
+					$data_value["jurusan1"] =$value["jurusan1"];
+					$data_value["jurusan2"] =$value["jurusan2"];
+					$data_value["nilai_ujian"] =$value["nilai_ujian"];
+					$data_value["role"] =$value["role"];
 
 
+					$this->model_peserta->tambah_data_frontend($data_value);
+					$this->model_peserta->delete_data_peserta($data_value["id"]);
+				}
+				elseif ($value["jurusan1"]=== "Back End Division") {
 
-		// $data_peserta = $this->model_peserta->get_data_peserta();
-		// $data["data_peserta"] = $data_peserta;
-
-		// foreach ($data_peserta as $value) {
-		// 	if ($value["jurusan1"]=== "Front End Division") {
-
-		// 		$data_value["id"] = $value["id"];
-		// 		$data_value["nama_lengkap"] =$value["nama_lengkap"];
-		// 		$data_value["jurusan1"] =$value["jurusan1"];
-		// 		$data_value["jurusan2"] =$value["jurusan2"];
-		// 		$data_value["nilai_ujian"] =$value["nilai_ujian"];
-		// 		$data_value["role"] =$value["role"];
+					$data_value["id"] = $value["id"];
+					$data_value["nama_lengkap"] =$value["nama_lengkap"];
+					$data_value["jurusan1"] =$value["jurusan1"];
+					$data_value["jurusan2"] =$value["jurusan2"];
+					$data_value["nilai_ujian"] =$value["nilai_ujian"];
+					$data_value["role"] =$value["role"];
 
 
-		// 		$this->model_peserta->tambah_data_frontend($data_value);
-		// 		$this->model_peserta->delete_data_peserta($data_value["id"]);
-		// 	}
-		// 	elseif ($value["jurusan1"]=== "Back End Division") {
+					$this->model_peserta->tambah_data_backend($data_value);
+					$this->model_peserta->delete_data_peserta($data_value["id"]);
+				}
+				elseif ($value["jurusan1"]=== "Mobile Division") {
 
-		// 		$data_value["id"] = $value["id"];
-		// 		$data_value["nama_lengkap"] =$value["nama_lengkap"];
-		// 		$data_value["jurusan1"] =$value["jurusan1"];
-		// 		$data_value["jurusan2"] =$value["jurusan2"];
-		// 		$data_value["nilai_ujian"] =$value["nilai_ujian"];
-		// 		$data_value["role"] =$value["role"];
-
-
-		// 		$this->model_peserta->tambah_data_backend($data_value);
-		// 		$this->model_peserta->delete_data_peserta($data_value["id"]);
-		// 	}
-		// }
+					$data_value["id"] = $value["id"];
+					$data_value["nama_lengkap"] =$value["nama_lengkap"];
+					$data_value["jurusan1"] =$value["jurusan1"];
+					$data_value["jurusan2"] =$value["jurusan2"];
+					$data_value["nilai_ujian"] =$value["nilai_ujian"];
+					$data_value["role"] =$value["role"];
 
 
-
-
-
-
-		$data_frontend = $this->model_peserta->get_data_frontend();
-		foreach ($data_frontend as $key => $value) {
-			if ($key>1 && $value["role"]==1) {
-				if ($value["jurusan2"]=="Back End Division") {
-					$data_value_backend["id"] = $value["id"];
-					$data_value_backend["nama_lengkap"] =$value["nama_lengkap"];
-					$data_value_backend["jurusan1"] =$value["jurusan1"];
-					$data_value_backend["jurusan2"] =$value["jurusan2"];
-					$data_value_backend["nilai_ujian"] =$value["nilai_ujian"];
-					$data_value_backend["role"] =2;
-
-					$this->model_peserta->tambah_data_backend($data_value_backend);
-					$this->model_peserta->delete_data_frontend($data_value_backend["id"]);
+					$this->model_peserta->tambah_data_mobile($data_value);
+					$this->model_peserta->delete_data_peserta($data_value["id"]);
 				}
 			}
-			elseif ($key>1 && $value["role"]==2) {
-				$data_value_backend["id"] = $value["id"];
-				$this->model_peserta->delete_data_frontend($data_value_backend["id"]);
-			}
-		}
 
 
-		$data_backend = $this->model_peserta->get_data_backend();
-		foreach ($data_backend as $key => $value) {
-			if ($key>1 && $value["role"]==1) {
-				if ($value["jurusan2"]=="Front End Division") {
-					$data_value_frontend["id"] = $value["id"];
-					$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
-					$data_value_frontend["jurusan1"] =$value["jurusan1"];
-					$data_value_frontend["jurusan2"] =$value["jurusan2"];
-					$data_value_frontend["nilai_ujian"] =$value["nilai_ujian"];
-					$data_value_frontend["role"] =2;
 
-					$this->model_peserta->tambah_data_frontend($data_value_frontend);
-					$this->model_peserta->delete_data_backend($data_value_frontend["id"]);
+
+		// karena pilihan jurusannya ada dua maka harus di ulang dua kali agar data yang masuk bisa di refresh lagi kalau tidak maka ada kemungkinan ada data yang masuk dari tabel lain belum di filter
+			for ($x = 1; $x <=2; $x++) {
+
+			// seleksi data front end
+				$data_frontend = $this->model_peserta->get_data_frontend();
+				foreach ($data_frontend as $key => $value) {
+					if ($key>1 && $value["role"]==1) {
+						if ($value["jurusan2"]=="Back End Division") {
+							$data_value_backend["id"] = $value["id"];
+							$data_value_backend["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_backend["jurusan1"] =$value["jurusan1"];
+							$data_value_backend["jurusan2"] =$value["jurusan2"];
+							$data_value_backend["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_backend["role"] =2;
+
+							$this->model_peserta->tambah_data_backend($data_value_backend);
+							$this->model_peserta->delete_data_frontend($value["id"]);
+						}
+						elseif ($value["jurusan2"]=="Mobile Division") {
+							$data_value_mobile["id"] = $value["id"];
+							$data_value_mobile["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_mobile["jurusan1"] =$value["jurusan1"];
+							$data_value_mobile["jurusan2"] =$value["jurusan2"];
+							$data_value_mobile["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_mobile["role"] =2;
+
+							$this->model_peserta->tambah_data_mobile($data_value_mobile);
+							$this->model_peserta->delete_data_frontend($value["id"]);
+						}
+					}
+					elseif ($key>1 && $value["role"]==2) {
+						$this->model_peserta->delete_data_frontend($value["id"]);
+					}
+				}
+
+			//seleksi data backend
+				$data_backend = $this->model_peserta->get_data_backend();
+				foreach ($data_backend as $key => $value) {
+					if ($key>1 && $value["role"]==1) {
+						if ($value["jurusan2"]=="Front End Division") {
+							$data_value_frontend["id"] = $value["id"];
+							$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_frontend["jurusan1"] =$value["jurusan1"];
+							$data_value_frontend["jurusan2"] =$value["jurusan2"];
+							$data_value_frontend["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_frontend["role"] =2;
+
+							$this->model_peserta->tambah_data_frontend($data_value_frontend);
+							$this->model_peserta->delete_data_backend($value["id"]);
+						}
+						elseif ($value["jurusan2"]=="Mobile Division") {
+							$data_value_mobile["id"] = $value["id"];
+							$data_value_mobile["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_mobile["jurusan1"] =$value["jurusan1"];
+							$data_value_mobile["jurusan2"] =$value["jurusan2"];
+							$data_value_mobile["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_mobile["role"] =2;
+
+							$this->model_peserta->tambah_data_mobile($data_value_mobile);
+							$this->model_peserta->delete_data_backend($value["id"]);
+						}
+					}
+					elseif ($key>1 && $value["role"]==2) {
+						$this->model_peserta->delete_data_backend($value["id"]);
+					}
+				}
+
+			//seleksi data mobile
+				$data_mobile= $this->model_peserta->get_data_mobile();
+				foreach ($data_mobile as $key => $value) {
+					if ($key>1 && $value["role"]==1) {
+						if ($value["jurusan2"]=="Front End Division") {
+							$data_value_frontend["id"] = $value["id"];
+							$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_frontend["jurusan1"] =$value["jurusan1"];
+							$data_value_frontend["jurusan2"] =$value["jurusan2"];
+							$data_value_frontend["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_frontend["role"] =2;
+
+							$this->model_peserta->tambah_data_frontend($data_value_frontend);
+							$this->model_peserta->delete_data_mobile($value["id"]);
+						}
+						elseif ($value["jurusan2"]=="Back End Division") {
+							$data_value_backend["id"] = $value["id"];
+							$data_value_backend["nama_lengkap"] =$value["nama_lengkap"];
+							$data_value_backend["jurusan1"] =$value["jurusan1"];
+							$data_value_backend["jurusan2"] =$value["jurusan2"];
+							$data_value_backend["nilai_ujian"] =$value["nilai_ujian"];
+							$data_value_backend["role"] =2;
+
+							$this->model_peserta->tambah_data_backend($data_value_backend);
+							$this->model_peserta->delete_data_mobile($value["id"]);
+						}
+					}
+					elseif ($key>1 && $value["role"]==2) {
+						$this->model_peserta->delete_data_mobile($value["id"]);
+					}
 				}
 			}
-			elseif ($key>1 && $value["role"]==2) {
-				$data_value_frontend["id"] = $value["id"];
-				$this->model_peserta->delete_data_backend($data_value_frontend["id"]);
+
+
+
+
+
+
+
+
+
+		//hapus data ketika sudah melalui pemfilteran agar data data yang sudah melalui dua pemfilteran kemungkinan masih ada data yang belum terseleksi
+
+
+			$del_data_frontend = $this->model_peserta->get_data_frontend();
+			foreach ($del_data_frontend as $key => $value) {
+				if ($key>1 && $value["role"]==2) {
+					$this->model_peserta->delete_data_frontend($value["id"]);
+				}
 			}
+			$del_data_backend = $this->model_peserta->get_data_backend();
+			foreach ($del_data_backend as $key => $value) {
+				if ($key>1 && $value["role"]==2) {
+					$this->model_peserta->delete_data_backend($value["id"]);
+				}
+			}
+			$del_data_mobile = $this->model_peserta->get_data_mobile();
+			foreach ($del_data_frontend as $key => $value) {
+				if ($key>1 && $value["role"]==2) {
+					$this->model_peserta->delete_data_mobile($value["id"]);
+				}
+			}
+
+
+
+			if ($data["value"]>0) {
+				redirect(base_url()."ujian/result");
+			}
+			elseif($data["value"]<=0){
+				echo "alert('Pengiriman data gagal')";
+			}
+
 		}
 
 		$data["page"] = "ujian";
