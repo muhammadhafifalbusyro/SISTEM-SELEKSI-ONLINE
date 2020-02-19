@@ -71,6 +71,7 @@ class Ujian extends CI_Controller{
 				$data_value["jurusan1"] =$value["jurusan1"];
 				$data_value["jurusan2"] =$value["jurusan2"];
 				$data_value["nilai_ujian"] =$value["nilai_ujian"];
+				$data_value["role"] =$value["role"];
 
 
 				$this->model_peserta->tambah_data_frontend($data_value);
@@ -83,6 +84,7 @@ class Ujian extends CI_Controller{
 				$data_value["jurusan1"] =$value["jurusan1"];
 				$data_value["jurusan2"] =$value["jurusan2"];
 				$data_value["nilai_ujian"] =$value["nilai_ujian"];
+				$data_value["role"] =$value["role"];
 
 
 				$this->model_peserta->tambah_data_backend($data_value);

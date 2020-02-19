@@ -8,7 +8,8 @@ class Model_peserta extends CI_Model{
 			"nama_lengkap" => $value["nama_lengkap"],
 			"jurusan1" => $value["jurusan1"],
 			"jurusan2" => $value["jurusan2"],
-			"nilai_ujian" => $value["hasil"]
+			"nilai_ujian" => $value["hasil"],
+			"role" => 1
 		);
 
 		$this->db->insert("peserta", $data); 
@@ -29,8 +30,8 @@ class Model_peserta extends CI_Model{
 				"nama_lengkap"=> $value["nama_lengkap"],
 				"jurusan1"=> $value["jurusan1"],
 				"jurusan2"=> $value["jurusan2"],
-				"nilai_ujian"=> $value["nilai_ujian"]
-
+				"nilai_ujian"=> $value["nilai_ujian"],
+				"role" => $value["role"]
 			];
 		}
 
@@ -47,7 +48,8 @@ class Model_peserta extends CI_Model{
 			"nama_lengkap" => $value["nama_lengkap"],
 			"jurusan1" => $value["jurusan1"],
 			"jurusan2" => $value["jurusan2"],
-			"nilai_ujian" => $value["nilai_ujian"]
+			"nilai_ujian" => $value["nilai_ujian"],
+			"role" => $value["role"]
 		);
 
 		$this->db->insert("frontend", $data); 
@@ -60,7 +62,8 @@ class Model_peserta extends CI_Model{
 			"nama_lengkap" => $value["nama_lengkap"],
 			"jurusan1" => $value["jurusan1"],
 			"jurusan2" => $value["jurusan2"],
-			"nilai_ujian" => $value["nilai_ujian"]
+			"nilai_ujian" => $value["nilai_ujian"],
+			"role" => $value["role"]
 		);
 
 		$this->db->insert("backend", $data); 
