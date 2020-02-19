@@ -41,7 +41,7 @@ class Admin extends CI_Controller{
 			}
 			elseif ($result < 0 ) {
 				echo "<script>
-				alert('Limit gagag dirubah')
+				alert('Limit gagal dirubah')
 				</script>";
 			}
 		}
