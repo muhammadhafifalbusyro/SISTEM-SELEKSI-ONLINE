@@ -1,7 +1,8 @@
 
 <div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
 	<form method="post" action="">
-		<div class="form-group ml-5" >
+		<?php var_dump($data_peserta) ?>
+		<!-- <div class="form-group ml-5" >
 			<label for="namalengkap" style="font-weight: bold;">Nama Lengkap </label>
 			<input type="text" class="form-control" id="namalengkap" name="namalengkap" required autocomplete="off">
 		</div>
@@ -147,7 +148,7 @@
 			<label for="10c">C) -5x<sup>2</sup> - 2xy - 3y<sup>2</sup></label><br>
 			<input type="radio" id="10d" name="soal10" value=0>
 			<label for="10d">D) -5x<sup>2</sup> - 2xy + 3y<sup>2</sup></label><br>
-		</div>
+		</div> -->
 		<button type="submit" class="btn btn-primary ml-5" name="add" id="add" onClick="return confirm('Apakah anda yakin sudah selesai ?')">Selesai</button>
 	</form>
 		<!-- <script type="text/javascript">

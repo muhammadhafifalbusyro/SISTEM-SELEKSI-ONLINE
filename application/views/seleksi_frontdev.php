@@ -18,7 +18,6 @@
 				</tr>	
 			</tbody>
 		</table>
-		<?php var_dump($value_data_peserta) ?>
 	</div>
 </div>
 
