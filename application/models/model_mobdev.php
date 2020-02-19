@@ -21,6 +21,7 @@ class Model_mobdev extends CI_Model{
 
 		return $data_mobile;
 	}
+	
 }
 
  ?>
