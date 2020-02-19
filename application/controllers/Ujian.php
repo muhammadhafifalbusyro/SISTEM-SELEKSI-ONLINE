@@ -5,6 +5,8 @@ class Ujian extends CI_Controller{
 	{
 		parent::__construct();
 		$this->load->model("model_peserta");
+		$this->load->model("model_admin");
+		$this->limit = $this->model_admin->get_data_limit();
 		$this->load->library("session");
 	}
 	public function login()
@@ -24,6 +26,8 @@ class Ujian extends CI_Controller{
 			}
 		}
 		$data["page"] = "ujian";
+		$data["lim"] = $this->limit["frontend"];
+		var_dump($data["lim"]);
 		$this->load->view("templates/header",$data);
 		$this->load->view("ujian");
 		$this->load->view("templates/footer");
