@@ -18,11 +18,17 @@ class Ujian extends CI_Controller{
 			redirect(base_url()."/ujian/soalujian");
 		}
 		$data["kodedefault"]= "seleksijurusan";
+		$data["kodeadmin"] = "adminseleksi";
+
 		$data["alert"] = "";
 		if (isset($_POST["masuk"])){
 			if($data["kodedefault"] == $_POST["kode"]){
 				$_SESSION["login"] = true;
 				redirect(base_url()."/ujian/soalujian");
+			}
+			elseif($data["kodeadmin"] == $_POST["kode"]){
+				$_SESSION["loginadmin"] = true;
+				redirect(base_url()."admin");
 			}
 			else{
 				$data["alert"] = "Kode yang anda masukan salah";

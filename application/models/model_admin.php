@@ -6,6 +6,18 @@ class Model_admin extends CI_Model{
 		$query= $query->result_array();
 		return $query[0];
 	}
+
+	public function update_limit($value)
+	{
+		$data = array(
+			'frontend' => $value["frontend"],
+			'backend' => $value["backend"],
+			'mobile' => $value["mobile"]
+		);
+
+		$this->db->where('id', $value["id"]);
+		$this->db->update('limit_jurusan', $data);
+	}
 }
 
 ?>

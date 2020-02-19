@@ -20,7 +20,7 @@ class Seleksi extends CI_Controller{
 		$data_frontend = $this->model_frontdev->get_data_frontend();
 		$data["data_frontend"]= $data_frontend;
 		$this->load->view("templates/header",$data);
-		$this->load->view("seleksi_frontdev");
+		$this->load->view("seleksi_frontdev",$data);
 
 	}
 	public function backdev()
@@ -29,7 +29,7 @@ class Seleksi extends CI_Controller{
 		$data_backend = $this->model_backdev->get_data_backend();
 		$data["data_backend"] = $data_backend;
 		$this->load->view("templates/header",$data);
-		$this->load->view("seleksi_backdev");
+		$this->load->view("seleksi_backdev",$data);
 	}
 	public function mobdev()
 	{
@@ -37,6 +37,6 @@ class Seleksi extends CI_Controller{
 		$data_mobile = $this->model_mobdev->get_data_mobile();
 		$data["data_mobile"]=$data_mobile;
 		$this->load->view("templates/header",$data);
-		$this->load->view("seleksi_mobdev");
+		$this->load->view("seleksi_mobdev",$data);
 	}
 }
