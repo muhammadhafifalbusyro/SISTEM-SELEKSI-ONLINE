@@ -32,65 +32,87 @@ class Ujian extends CI_Controller{
 	public function soalujian()
 	{
 		$data["data_peserta"]= [];
+		$data["data_frontend"]= [];
+
 		if(!isset($_SESSION["login"])){
 			redirect(base_url()."/ujian/login");
 		}
-		elseif (isset($_POST["add"])&&isset($_SESSION["login"])){
-			// $data["nama_lengkap"] = $_POST["namalengkap"];
-			// $data["jurusan1"] = $_POST["jurusan1"];
-			// $data["jurusan2"] = $_POST["jurusan2"];
-			// $hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
-			// $data["hasil"]= $hasil_ujian*10;
+		// elseif (isset($_POST["add"])&&isset($_SESSION["login"])){
+		// 	$data["nama_lengkap"] = $_POST["namalengkap"];
+		// 	$data["jurusan1"] = $_POST["jurusan1"];
+		// 	$data["jurusan2"] = $_POST["jurusan2"];
+		// 	$hasil_ujian = intval($_POST["soal1"])+intval($_POST["soal2"])+intval($_POST["soal3"])+intval($_POST["soal4"])+intval($_POST["soal5"])+intval($_POST["soal6"])+intval($_POST["soal7"])+intval($_POST["soal8"])+intval($_POST["soal9"])+intval($_POST["soal10"]);
+		// 	$data["hasil"]= $hasil_ujian*10;
 
-			// $data["value"] = $this->model_peserta->tambah_data_peserta($data);
+		// 	$data["value"] = $this->model_peserta->tambah_data_peserta($data);
 
-			// $_SESSION["nama_lengkap"] = $_POST["namalengkap"];
-			// $_SESSION["jurusan1"] = $_POST["jurusan1"];
-			// $_SESSION["jurusan2"] = $_POST["jurusan2"];
-			// $_SESSION["hasil"] = $data["hasil"];
-
-
-			// if ($data["value"]>0) {
-			// 	redirect(base_url()."ujian/result");
-			// }
-			// elseif($data["value"]<=0){
-			// 	echo "alert('Pengiriman data gagal')";
-			// }
-
-		}
+		// 	$_SESSION["nama_lengkap"] = $_POST["namalengkap"];
+		// 	$_SESSION["jurusan1"] = $_POST["jurusan1"];
+		// 	$_SESSION["jurusan2"] = $_POST["jurusan2"];
+		// 	$_SESSION["hasil"] = $data["hasil"];
 
 
-		$data_peserta = $this->model_peserta->get_data_peserta();
-		$data["data_peserta"] = $data_peserta;
+		// 	if ($data["value"]>0) {
+		// 		redirect(base_url()."ujian/result");
+		// 	}
+		// 	elseif($data["value"]<=0){
+		// 		echo "alert('Pengiriman data gagal')";
+		// 	}
 
-		foreach ($data_peserta as $value) {
-			if ($value["jurusan1"]=== "Front End Division") {
-
-				$data_value["id"] = $value["id"];
-				$data_value["nama_lengkap"] =$value["nama_lengkap"];
-				$data_value["jurusan1"] =$value["jurusan1"];
-				$data_value["jurusan2"] =$value["jurusan2"];
-				$data_value["nilai_ujian"] =$value["nilai_ujian"];
-				$data_value["role"] =$value["role"];
+		// }
 
 
-				$this->model_peserta->tambah_data_frontend($data_value);
-				$this->model_peserta->delete_data_peserta($data_value["id"]);
+
+
+
+
+		// $data_peserta = $this->model_peserta->get_data_peserta();
+		// $data["data_peserta"] = $data_peserta;
+
+		// foreach ($data_peserta as $value) {
+		// 	if ($value["jurusan1"]=== "Front End Division") {
+
+		// 		$data_value["id"] = $value["id"];
+		// 		$data_value["nama_lengkap"] =$value["nama_lengkap"];
+		// 		$data_value["jurusan1"] =$value["jurusan1"];
+		// 		$data_value["jurusan2"] =$value["jurusan2"];
+		// 		$data_value["nilai_ujian"] =$value["nilai_ujian"];
+		// 		$data_value["role"] =$value["role"];
+
+
+		// 		$this->model_peserta->tambah_data_frontend($data_value);
+		// 		$this->model_peserta->delete_data_peserta($data_value["id"]);
+		// 	}
+		// 	elseif ($value["jurusan1"]=== "Back End Division") {
+
+		// 		$data_value["id"] = $value["id"];
+		// 		$data_value["nama_lengkap"] =$value["nama_lengkap"];
+		// 		$data_value["jurusan1"] =$value["jurusan1"];
+		// 		$data_value["jurusan2"] =$value["jurusan2"];
+		// 		$data_value["nilai_ujian"] =$value["nilai_ujian"];
+		// 		$data_value["role"] =$value["role"];
+
+
+		// 		$this->model_peserta->tambah_data_backend($data_value);
+		// 		$this->model_peserta->delete_data_peserta($data_value["id"]);
+		// 	}
+		// }
+
+
+
+
+
+
+		$data_frontend = $this->model_peserta->get_data_frontend();
+		
+		$new=[];
+		foreach ($data_frontend as $key => $value) {
+			if ($key>1) {
+				# code...
 			}
-			elseif ($value["jurusan1"]=== "Back End Division") {
-
-				$data_value["id"] = $value["id"];
-				$data_value["nama_lengkap"] =$value["nama_lengkap"];
-				$data_value["jurusan1"] =$value["jurusan1"];
-				$data_value["jurusan2"] =$value["jurusan2"];
-				$data_value["nilai_ujian"] =$value["nilai_ujian"];
-				$data_value["role"] =$value["role"];
-
-
-				$this->model_peserta->tambah_data_backend($data_value);
-				$this->model_peserta->delete_data_peserta($data_value["id"]);
-			}
 		}
+		var_dump($new);
+		$data["data_frontend"] = $data_frontend;
 
 		$data["page"] = "ujian";
 		$this->load->view("templates/header",$data);
