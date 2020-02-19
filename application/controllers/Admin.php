@@ -31,17 +31,27 @@ class Admin extends CI_Controller{
 			$data["backend"] = $_POST["backend"];
 			$data["mobile"] = $_POST["mobile"];
 
-			$this->model_admin->update_limit($data);
-			redirect(base_url()."admin");
+			
+			$result = $this->model_admin->update_limit($data);
+			if ($result >= 0 ) {
+				echo "<script>
+				alert('Data berhasil dirubah');
+				window.location.href='admin';
+				</script>";
+			}
+			elseif ($result < 0 ) {
+				echo "<script>
+				alert('Limit gagag dirubah')
+				</script>";
+			}
 		}
 
 		
 
 		$this->load->view("templates/header",$data);
-		$this->load->view("dashboard");
+		$this->load->view("dashboard",$data);
 		$this->load->view("templates/footer");
 	}
 }
 
 
-?>

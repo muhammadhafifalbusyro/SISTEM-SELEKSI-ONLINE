@@ -17,6 +17,7 @@ class Model_admin extends CI_Model{
 
 		$this->db->where('id', $value["id"]);
 		$this->db->update('limit_jurusan', $data);
+		return $this->db->affected_rows();
 	}
 }
 
