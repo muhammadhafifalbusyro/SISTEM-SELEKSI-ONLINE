@@ -76,6 +76,10 @@ class Model_peserta extends CI_Model{
 
 		return $data_frontend;
 	}
+	public function delete_data_frontend($id)
+	{
+		$this->db->delete('frontend', array('id' => $id)); 
+	}
 	public function tambah_data_backend($value)
 	{
 		$data = array(
@@ -110,6 +114,10 @@ class Model_peserta extends CI_Model{
 		}
 
 		return $data_backend;
+	}
+	public function delete_data_backend($id)
+	{
+		$this->db->delete('backend', array('id' => $id)); 
 	}
 }
 

@@ -104,15 +104,47 @@ class Ujian extends CI_Controller{
 
 
 		$data_frontend = $this->model_peserta->get_data_frontend();
-		
-		$new=[];
 		foreach ($data_frontend as $key => $value) {
-			if ($key>1) {
-				# code...
+			if ($key>1 && $value["role"]==1) {
+				if ($value["jurusan2"]=="Back End Division") {
+					$data_value_backend["id"] = $value["id"];
+					$data_value_backend["nama_lengkap"] =$value["nama_lengkap"];
+					$data_value_backend["jurusan1"] =$value["jurusan1"];
+					$data_value_backend["jurusan2"] =$value["jurusan2"];
+					$data_value_backend["nilai_ujian"] =$value["nilai_ujian"];
+					$data_value_backend["role"] =2;
+
+					$this->model_peserta->tambah_data_backend($data_value_backend);
+					$this->model_peserta->delete_data_frontend($data_value_backend["id"]);
+				}
+			}
+			elseif ($key>1 && $value["role"]==2) {
+				$data_value_backend["id"] = $value["id"];
+				$this->model_peserta->delete_data_frontend($data_value_backend["id"]);
 			}
 		}
-		var_dump($new);
-		$data["data_frontend"] = $data_frontend;
+
+
+		$data_backend = $this->model_peserta->get_data_backend();
+		foreach ($data_backend as $key => $value) {
+			if ($key>1 && $value["role"]==1) {
+				if ($value["jurusan2"]=="Front End Division") {
+					$data_value_frontend["id"] = $value["id"];
+					$data_value_frontend["nama_lengkap"] =$value["nama_lengkap"];
+					$data_value_frontend["jurusan1"] =$value["jurusan1"];
+					$data_value_frontend["jurusan2"] =$value["jurusan2"];
+					$data_value_frontend["nilai_ujian"] =$value["nilai_ujian"];
+					$data_value_frontend["role"] =2;
+
+					$this->model_peserta->tambah_data_frontend($data_value_frontend);
+					$this->model_peserta->delete_data_backend($data_value_frontend["id"]);
+				}
+			}
+			elseif ($key>1 && $value["role"]==2) {
+				$data_value_frontend["id"] = $value["id"];
+				$this->model_peserta->delete_data_backend($data_value_frontend["id"]);
+			}
+		}
 
 		$data["page"] = "ujian";
 		$this->load->view("templates/header",$data);
