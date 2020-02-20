@@ -13,10 +13,14 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
+			<?php if ($page != "result"):?>
 			<a class="navbar-brand" href="<?php echo base_url(); ?>">Sistem Seleksi Online</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			<?php else: ?>
+				<div style="height: 40px"></div>
+			<?php endif; ?>
 			<?php if($page == "beranda"): ?>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ">

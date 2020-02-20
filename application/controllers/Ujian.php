@@ -272,7 +272,7 @@ class Ujian extends CI_Controller{
 	}
 	public function result()
 	{
-		$data["page"] = "ujian";
+		$data["page"] = "result";
 		$data["nama_lengkap"] = " ";
 		$data["jurusan1"] = " ";
 		$data["jurusan2"] = " ";
