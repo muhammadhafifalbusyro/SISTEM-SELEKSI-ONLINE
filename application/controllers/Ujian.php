@@ -18,7 +18,7 @@ class Ujian extends CI_Controller{
 	public function login()
 	{
 		if(isset($_SESSION["login"])){
-			redirect(base_url()."/ujian/soalujian");
+			redirect(base_url()."ujian/soalujian");
 		}
 		
 		$data["kodeadmin"] = $this->kode_masuk_admin;
@@ -28,7 +28,7 @@ class Ujian extends CI_Controller{
 		if (isset($_POST["masuk"])){
 			if($data["kodesantri"] == $_POST["kode"]){
 				$_SESSION["login"] = true;
-				redirect(base_url()."/ujian/soalujian");
+				redirect(base_url()."ujian/soalujian");
 			}
 			elseif($data["kodeadmin"] == $_POST["kode"]){
 				$_SESSION["loginadmin"] = true;
@@ -47,9 +47,15 @@ class Ujian extends CI_Controller{
 	public function soalujian()
 	{
 		if(!isset($_SESSION["login"])){
-			redirect(base_url()."/ujian/login");
+			redirect(base_url()."ujian/login");
 		}
 		elseif (isset($_POST["add"])&&isset($_SESSION["login"])){
+			if ($_POST["jurusan1"]==$_POST["jurusan2"]) {
+				echo "<script>
+				alert('Pilihan jurusan yang kedua tidak boleh sama dengan yang pertama');
+				window.location.href='soalujian';
+				</script>";
+			}
 			$data["nama_lengkap"] = $_POST["namalengkap"];
 			$data["jurusan1"] = $_POST["jurusan1"];
 			$data["jurusan2"] = $_POST["jurusan2"];
