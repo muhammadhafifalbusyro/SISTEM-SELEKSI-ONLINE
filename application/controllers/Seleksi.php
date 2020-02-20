@@ -1,5 +1,4 @@
 <?php  
-
 class Seleksi extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
@@ -40,3 +39,4 @@ class Seleksi extends CI_Controller{
 		$this->load->view("seleksi_mobdev",$data);
 	}
 }
+?>

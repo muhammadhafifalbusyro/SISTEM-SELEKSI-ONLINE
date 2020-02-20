@@ -1,5 +1,4 @@
 <?php 
-
 class Model_peserta extends CI_Model{
 	public function tambah_data_peserta($value)
 	{
@@ -159,5 +158,4 @@ class Model_peserta extends CI_Model{
 		$this->db->delete('mobile', array('id' => $id)); 
 	}
 }
-
 ?>

@@ -1,6 +1,4 @@
-	<?php
-
-
+<?php
 class Beranda extends CI_Controller {
 
 	/**
@@ -26,3 +24,4 @@ class Beranda extends CI_Controller {
 		$this->load->view("templates/footer");
 	}
 }
+?>

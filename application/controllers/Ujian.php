@@ -1,5 +1,4 @@
 <?php 
-
 class Ujian extends CI_Controller{
 	public function __construct()
 	{
@@ -295,3 +294,4 @@ class Ujian extends CI_Controller{
 		$this->load->view("templates/footer");
 	}
 }
+?>
