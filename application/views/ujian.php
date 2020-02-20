@@ -2,7 +2,7 @@
 	<form method="post" action="">
 
 		<div class="form-group">
-			<label for="kode">Masukan kode ujian</label>
+			<label for="kode">Masukan kode ujian/admin</label>
 			<input type="password" class="form-control" id="kode" name="kode">
 		</div>
 		<p style="color: red ;font-size: 12"><?php echo $alert ?></p>

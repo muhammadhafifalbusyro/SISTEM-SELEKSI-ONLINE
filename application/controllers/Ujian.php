@@ -10,6 +10,10 @@ class Ujian extends CI_Controller{
 		$this->frontend_limit = $this->limit["frontend"];
 		$this->backend_limit = $this->limit["backend"];
 		$this->mobile_limit = $this->limit["mobile"];
+
+		$this->kode_masuk= $this->model_admin->get_code();
+		$this->kode_masuk_admin = $this->kode_masuk["kode_admin"];
+		$this->kode_masuk_santri = $this->kode_masuk["kode_santri"];
 		$this->load->library("session");
 	}
 	public function login()
@@ -17,12 +21,13 @@ class Ujian extends CI_Controller{
 		if(isset($_SESSION["login"])){
 			redirect(base_url()."/ujian/soalujian");
 		}
-		$data["kodedefault"]= "seleksijurusan";
-		$data["kodeadmin"] = "adminseleksi";
+		
+		$data["kodeadmin"] = $this->kode_masuk_admin;
+		$data["kodesantri"]= $this->kode_masuk_santri;
 
 		$data["alert"] = "";
 		if (isset($_POST["masuk"])){
-			if($data["kodedefault"] == $_POST["kode"]){
+			if($data["kodesantri"] == $_POST["kode"]){
 				$_SESSION["login"] = true;
 				redirect(base_url()."/ujian/soalujian");
 			}

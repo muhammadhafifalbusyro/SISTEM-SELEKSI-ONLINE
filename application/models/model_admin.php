@@ -6,7 +6,12 @@ class Model_admin extends CI_Model{
 		$query= $query->result_array();
 		return $query[0];
 	}
-
+	public function get_code()
+	{
+		$query = $this->db->get("kode_masuk");
+		$query= $query->result_array();
+		return $query[0];
+	}
 	public function update_limit($value)
 	{
 		$data = array(
@@ -17,6 +22,17 @@ class Model_admin extends CI_Model{
 
 		$this->db->where('id', $value["id"]);
 		$this->db->update('limit_jurusan', $data);
+		return $this->db->affected_rows();
+	}
+	public function update_code($value)
+	{
+		$data = array(
+			'kode_admin' => $value["admin"],
+			'kode_santri' => $value["santri"],
+		);
+
+		$this->db->where('id', $value["id"]);
+		$this->db->update('kode_masuk', $data);
 		return $this->db->affected_rows();
 	}
 }

@@ -10,6 +10,7 @@ class Admin extends CI_Controller{
 	{
 		$data["page"] = "admin";
 		$data["limit"] = $this->model_admin->get_data_limit();
+		$data["kode_masuk"] = $this->model_admin->get_code();
 
 
 		if(!isset($_SESSION["loginadmin"])){
@@ -35,7 +36,7 @@ class Admin extends CI_Controller{
 			$result = $this->model_admin->update_limit($data);
 			if ($result >= 0 ) {
 				echo "<script>
-				alert('Data berhasil dirubah');
+				alert('Limit berhasil dirubah');
 				window.location.href='admin';
 				</script>";
 			}
@@ -45,12 +46,29 @@ class Admin extends CI_Controller{
 				</script>";
 			}
 		}
+		elseif (isset($_POST["ubah_kode"])&&isset($_SESSION["loginadmin"])) {
+			$data["id"] = $data["kode_masuk"]["id"];
+			$data["admin"] = $_POST["admin"];
+			$data["santri"] = $_POST["santri"];
 
+			
+			$result = $this->model_admin->update_code($data);
+			if ($result >= 0 ) {
+				echo "<script>
+				alert('Kode masuk berhasil dirubah');
+				window.location.href='admin';
+				</script>";
+			}
+			elseif ($result < 0 ) {
+				echo "<script>
+				alert('Limit gagal dirubah')
+				</script>";
+			}
+		}
 		
 
 		$this->load->view("templates/header",$data);
 		$this->load->view("dashboard",$data);
-		$this->load->view("templates/footer");
 	}
 }
 
