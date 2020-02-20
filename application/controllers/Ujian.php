@@ -55,6 +55,7 @@ class Ujian extends CI_Controller{
 				alert('Pilihan jurusan yang kedua tidak boleh sama dengan yang pertama');
 				window.location.href='soalujian';
 				</script>";
+				return false;
 			}
 			$data["nama_lengkap"] = $_POST["namalengkap"];
 			$data["jurusan1"] = $_POST["jurusan1"];
