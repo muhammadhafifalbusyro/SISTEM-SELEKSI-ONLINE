@@ -158,4 +158,3 @@ class Model_peserta extends CI_Model{
 		$this->db->delete('mobile', array('id' => $id)); 
 	}
 }
-?>

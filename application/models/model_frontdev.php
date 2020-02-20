@@ -22,4 +22,3 @@ class Model_frontdev extends CI_Model{
 		return $data_frontend;
 	}
 }
-?>

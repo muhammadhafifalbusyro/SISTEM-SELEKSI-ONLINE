@@ -39,4 +39,3 @@ class Seleksi extends CI_Controller{
 		$this->load->view("seleksi_mobdev",$data);
 	}
 }
-?>

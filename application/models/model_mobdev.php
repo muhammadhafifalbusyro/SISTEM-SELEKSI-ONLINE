@@ -23,4 +23,3 @@ class Model_mobdev extends CI_Model{
 	}
 	
 }
-?>

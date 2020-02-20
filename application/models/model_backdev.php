@@ -23,4 +23,3 @@ class Model_backdev extends CI_Model{
 	}
 
 }
-?>
