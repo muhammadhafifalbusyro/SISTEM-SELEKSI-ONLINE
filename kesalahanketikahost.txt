@@ -1,3 +1,4 @@
 1)nama file model harus sama kaya classnya
 2)pemanggilan model boleh lowercase
 3)di config/database.php 'stricton' => TRUE,
+4) header location -> jangan ada jarak di line atas php
