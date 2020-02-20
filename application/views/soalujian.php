@@ -1,6 +1,18 @@
 
 <div style="display: flex;width: 100%;justify-content: flex-start ;align-items: center; padding-top: 100px;padding-bottom: 100px">
 	<form method="post" action="">
+		<h1 class="ml-5">Peraturan Ujian</h1>
+		<ol class="ml-5">
+			<li>Waktu ujian selama 15 menit</li>
+			<li>Berdoa sebelum memulai ujian</li>
+			<li>Isi kolom nama dan pilihan jurusan ( pilihan jurusan kedua tidak boleh sama dengan pilihan jurusan pertama ) </li>
+			<li>Teliti dalam mengerjakan soal ujian , tidak usah terburu-buru</li>
+			<li>Jika sudah selesai, harap periksa kembali jawaban anda</li>
+			<li> Klik tombol sleesai jika kamu sudah yakin selesai</li>
+		</ol>
+		<br>
+		<hr width="100%">
+		<br>
 		<div class="form-group ml-5" >
 			<label for="namalengkap" style="font-weight: bold;">Nama Lengkap </label>
 			<input type="text" class="form-control" id="namalengkap" name="namalengkap" required autocomplete="off">
